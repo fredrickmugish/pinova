@@ -10,7 +10,8 @@ urlpatterns = [
     path('services/', views.services_page, name="services"),
     path('work/', views.work_page, name="work"),
     path('contact/', views.contact_page, name="contact"),
-
+    path('contact_data/', views.contact_data, name="contact_data"),
+  
 ]
 
 if settings.DEBUG:
