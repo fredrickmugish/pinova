@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-title" style="background-color: white;" data-aos="fade">
+  <div class="heading">
+    <div class="container-fluid">
+      <div class="row justify-content-center text-center">
+      <!-- Trust Logos Section -->
+<section class="trust-logos py-5" style="background-color: #f9f9f9;" data-aos="fade-up">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="mb-3">Trusted by Industry Leaders</h2>
+        <p>
+          We take pride in being the trusted partner for top industry leaders, consistently delivering outstanding solutions for their most critical projects.
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <!-- Logos -->
+      <div class="col-lg-2 col-md-3 col-4 mb-3">
+        <img src="{% static 'img/logo/ipp.png' %}" alt="Global Leader 1" class="img-fluid">
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-4 mb-3">
+        <img src="{% static 'img/logo/ngopyolo.png' %}" alt="Global Leader 3" class="img-fluid">
+      </div>
+      
+      <div class="col-lg-2 col-md-3 col-4 mb-3">
+        <img src="{% static 'img/logo/kalage.png' %}" alt="Global Leader 2" class="img-fluid">
+      </div>
+     
+      <div class="col-lg-2 col-md-3 col-4 mb-3">
+        <img src="{% static 'img/logo/fg.png' %}" alt="Global Leader 4" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Work Section -->
+<section class="our-work" style="margin-top: 0; padding-top: 0;">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h1 class="my-4">Some Work</h1>
+        <p class="mb-4">
+          Among the many projects we’ve been a part of, these are some of the projects showcasing our technical capabilities and our commitment to delivering excellence:
+        </p>
+<!-- Filter Buttons -->
+<div class="row mb-4">
+  <div class="col-12">
+    <div class="row gx-3">
+      <div class="col-lg-auto col-md-6 col-12 mb-2">
+        <button class="btn btn-success w-100 filter-btn" data-filter="all">All</button>
+      </div>
+      <div class="col-lg-auto col-md-6 col-12 mb-2">
+        <button class="btn btn-secondary w-100 filter-btn" data-filter="System development">System Development</button>
+      </div>
+      <div class="col-lg-auto col-md-6 col-12 mb-2">
+        <button class="btn btn-secondary w-100 filter-btn" data-filter="Software development">Software Development</button>
+      </div>
+      <div class="col-lg-auto col-md-6 col-12 mb-2">
+        <button class="btn btn-secondary w-100 filter-btn" data-filter="AI & Machine Learning">AI & Machine Learning</button>
+      </div>
+      <div class="col-lg-auto col-md-6 col-12 mb-2">
+        <button class="btn btn-secondary w-100 filter-btn" data-filter="Mobile App Development & AI">Mobile App Development & AI</button>
+      </div>
+    </div>
+  </div>
+</div>
+              </div>
+            </div>
+
+            <!-- Projects Section -->
+<div class="row g-3 projects-container" data-aos="fade-up" data-aos-delay="100">
+  <!-- Project Items -->
+  <div class="col-lg-3 col-md-4 col-sm-6 project-item" data-category="System development">
+    <div class="card">
+      <a href="{% static 'img/projects/vgs.png' %}" class="glightbox" data-gallery="projects-gallery" data-title="Visitors & Gatepass system" data-description="A comprehensive system designed to manage visitor access, gate passes, and real-time tracking of visitors in a secure environment. It ensures smooth management of gate entries, records visitor details, and improves security processes.">
+        <img src="{% static 'img/projects/vgs.png' %}" alt="Visitors & Gatepass system" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title" style="color: black">Visitors & Gatepass system</h5>
+          <p class="card-text">System development</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 project-item" data-category="Software development">
+    <div class="card">
+      <a href="{% static 'img/projects/klg.png' %}" class="glightbox" data-gallery="projects-gallery" data-title="E-commerce website & system" data-description="An e-commerce platform developed for managing products, customer orders, payments, and delivery. The system includes a user-friendly front-end interface and a powerful back-end dashboard for admin functionalities.">
+        <img src="{% static 'img/projects/klg.png' %}" alt="E-commerce website & system" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title" style="color: black">E-commerce website & system</h5>
+          <p class="card-text">Software development</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 project-item" data-category="AI & Machine Learning">
+    <div class="card">
+      <a href="{% static 'img/projects/intel.png' %}" class="glightbox" data-gallery="projects-gallery" data-title="AI-Powered Decision Support System" data-description="A machine learning-driven decision support system designed to assist business leaders in making data-driven decisions. The system leverages AI to analyze data, identify patterns, and provide actionable insights to improve decision-making processes.">
+        <img src="{% static 'img/projects/intel.png' %}" alt="AI-Powered Decision Support System" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title" style="color: black">AI-Powered Decision Support System</h5>
+          <p class="card-text">AI & Machine Learning</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 project-item" data-category="Mobile App Development & AI">
+    <div class="card">
+      <a href="{% static 'img/projects/nt.jpeg' %}" class="glightbox" data-gallery="projects-gallery" data-title="Nutrition Detection App" data-description="An innovative mobile app that uses AI to analyze food images and provide nutritional information. The app aims to help users track their diet, make healthier food choices, and manage their nutrition more effectively.">
+        <img src="{% static 'img/projects/nt.jpeg' %}" alt="Nutrition Detection App" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title" style="color: black">Nutrition Detection App</h5>
+          <p class="card-text">Mobile App Development & AI</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      // Update button styles
+      filterButtons.forEach(btn => {
+        btn.classList.remove('btn-success', 'btn-secondary');
+        btn.classList.add('btn-secondary'); // Default all to secondary
+      });
+      button.classList.add('btn-success'); // Highlight active button
+
+      // Show/Hide projects
+      projectItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+{% endblock content %}

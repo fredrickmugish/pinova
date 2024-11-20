@@ -1,0 +1,394 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section -->
+<section id="hero" class="hero section bg-gradient">
+    <div class="hero-overlay"></div>
+    <img src="{% static "img/pino-bg.jpg" %}" alt="Hero Background" class="hero-bg">
+    <div class="container">
+      <div class="row gy-4 justify-content-between align-items-center">
+        <!-- Hero Text Section -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center text-light order-1 py-4 
+        text-lg-start align-items-lg-start justify-content-lg-start" data-aos="fade-in">
+          <h1 class="hero-title mb-3">Welcome to <span class="highlight-text">Pinova Technologies</span></h1>
+          <p class="hero-description mb-4">We are a team of creative innovators building digital solutions that propel businesses to new heights.</p>
+          <h2 class="mb-4">Transform Your Ideas into Reality with <span class="highlight-text">Pinova Tech</span></h2>
+          <div class="d-flex">
+            <a href="{% url 'services' %}" class="btn btn-lg" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; border: none;">Work with Us</a>
+          </div>
+        </div>
+        <!-- Hero Image Section -->
+        <div class="col-lg-5 hero-img order-2 d-flex justify-content-center align-items-center" data-aos="zoom-out" data-aos-delay="100">
+          <img src="{% static "img/bcc.png" %}" class="img-fluid animated" style="max-width: auto; height: 450px;">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+  <section id="about" class="about section bg-light py-5">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-center gy-5">
+        <!-- About Text Content -->
+        <div class="col-xl-6 content">
+          <!-- Section Title -->
+          <div class="section-title mb-4">
+            <h1 class="mb-3">Meet with Pinova Tech</h1>
+            <p class="description-title mb-0">Building Innovative Solutions for Tomorrow's Challenges</p>
+          </div>
+          <!-- End Section Title -->
+          <h2 class="mb-3">Empowering Your Business Through Technology</h2>
+          <p>
+            At Pinova Tech, we are committed to crafting cutting-edge solutions that empower businesses and individuals to achieve their goals through technology.
+          </p>
+          <a href="{% url 'about' %}" class="btn btn-lg" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; border: none;">More About Us <i class="bi bi-arrow-right"></i></a>
+        </div>
+  
+        <!-- Icon Boxes -->
+  <div class="col-xl-6">
+    <div class="row gy-4 icon-boxes">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon-box shadow p-4 text-center rounded">
+          <i class="bi bi-lightbulb fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
+          <h3 class="h5">Innovative Solutions</h3>
+          <p>We bring creative problem-solving and advanced technology to deliver unique solutions for our clients.</p>
+        </div>
+      </div>
+  
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-box shadow p-4 text-center rounded">
+          <i class="bi bi-shield-check fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
+          <h3 class="h5">Reliable & Secure</h3>
+          <p>Pinova Tech is dedicated to building secure, reliable systems tailored to meet your business needs.</p>
+        </div>
+      </div>
+      
+  
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon-box shadow p-4 text-center rounded">
+          <i class="bi bi-gear fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
+          <h3 class="h5">Custom Development</h3>
+          <p>We develop custom solutions that align with your unique requirements and objectives.</p>
+        </div>
+      </div>
+  
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="icon-box shadow p-4 text-center rounded">
+          <i class="bi bi-graph-up-arrow fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
+          <h3 class="h5">Results-Driven Approach</h3>
+          <p>Our focus is on delivering results that drive growth, efficiency, and innovation for your organization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </section>
+  <!-- End About Section -->
+  
+  
+      <!-- Stats Section -->
+      <section id="stats" class="stats section light-background">
+  
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+      
+          <h2 class="section-title">Our Achievements</h2>
+          <p class="section-subtitle">We are dedicated to delivering top-notch solutions and exceptional results for our clients.</p>
+      
+          <div class="row gy-4">
+      
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+              <i class="bi bi-emoji-smile" style="color: #ffbb2c; font-size: 2em;"></i>
+              <div class="stats-item">
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Our Clients</p>
+              </div>
+            </div><!-- End Stats Item -->
+      
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+              <i class="bi bi-journal-richtext" style="color: #5578ff; font-size: 2em;"></i>
+              <div class="stats-item">
+                <span data-purecounter-start="0" data-purecounter-end="28" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projects Completed</p>
+              </div>
+            </div><!-- End Stats Item -->
+      
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+              <i class="bi bi-headset" style="color: #e80368; font-size: 2em;"></i>
+              <div class="stats-item">
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours of Support</p>
+              </div>
+            </div><!-- End Stats Item -->
+      
+            <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+              <i class="bi bi-people" style="color: #11dbcf; font-size: 2em;"></i>
+              <div class="stats-item">
+                <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Dedicated Team Members</p>
+              </div>
+            </div><!-- End Stats Item -->
+      
+          </div>
+      
+        </div>
+      
+      </section><!-- /Stats Section -->
+      
+      
+      <section id="features" class="features section">
+        <div class="container">
+          <h2 class="section-title" data-aos="fade-up">Technologies & Tools We Use</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            We leverage a variety of powerful technologies to deliver exceptional solutions for our clients.
+          </p>
+      
+          <div class="row gy-4">
+            
+            <!-- Laravel -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="features-item">
+                <i class="fa-brands fa-laravel" style="color: #ff2d20;"></i>
+                <h3>Laravel</h3>
+              </div>
+            </div>
+      
+            <!-- Django -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="features-item">
+                  <i class="fab fa-python" style="color: #306998;"></i>
+                  <h3>Django</h3>
+                </div>
+              </div>
+        
+            <!-- Flutter -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="features-item">
+                <i class="fa-brands fa-flutter" style="color: #02569b;"></i>
+                <h3>Flutter</h3>
+              </div>
+            </div>
+      
+            <!-- Node.js -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="features-item">
+                <i class="fa-brands fa-node" style="color: #68a063;"></i>
+                <h3>Node.js</h3>
+              </div>
+            </div>
+      
+            <!-- Spring Boot -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+              <div class="features-item">
+                <i class="fab fa-java" style="color: #6db33f;"></i>
+                <h3>Spring Boot</h3>
+              </div>
+            </div>
+      
+            <!-- React -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="features-item">
+                <i class="fa-brands fa-react" style="color: #61dafb;"></i>
+                <h3>ReactJS</h3>
+              </div>
+            </div>
+      
+            <!-- Figma -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+              <div class="features-item">
+                <i class="fa-brands fa-figma" style="color: #f24e1e;"></i>
+                <h3>Figma</h3>
+              </div>
+            </div>
+      
+         <!-- Adobe Photoshop -->
+<div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+    <div class="features-item">
+      <i class="fab fa-photoshop" style="color: #ff0000;"></i>
+      <h3>Adobe Photoshop</h3>
+    </div>
+  </div>
+  
+  <!-- Adobe Illustrator -->
+  <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+    <div class="features-item">
+      <i class="fab fa-illustrator" style="color: #ff9a00;"></i>
+      <h3>Illustrator</h3>
+    </div>
+  </div>
+  
+      
+            <!-- TensorFlow -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+              <div class="features-item">
+                <i class="fa fa-brain" style="color: #ff6f00;"></i>
+                <h3>TensorFlow</h3>
+              </div>
+            </div>
+      
+            <!-- Apache -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
+              <div class="features-item">
+                <i class="fa fa-server" style="color: #d22128;"></i>
+                <h3>Apache</h3>
+              </div>
+            </div>
+      
+            <!-- PostgreSQL -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
+              <div class="features-item">
+                <i class="fa-brands fa-database" style="color: #336791;"></i>
+                <h3><a href="" class="stretched-link">PostgreSQL</a></h3>
+              </div>
+            </div>
+      
+            <!-- MySQL -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1300">
+              <div class="features-item">
+                <i class="fa fa-database" style="color: #00758f;"></i>
+                <h3>MySQL</h3>
+              </div>
+            </div>
+      
+            <!-- AWS -->
+            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1400">
+              <div class="features-item">
+                <i class="fa fa-cloud" style="color: #ff9900;"></i>
+                <h3>AWS</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+  
+  
+  
+   <!-- Why Choose Pinova Tech Section -->
+  <section id="why-choose" class="faq section light-background">
+  
+    <div class="container-fluid">
+  
+      <div class="row gy-4">
+  
+        <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+  
+          <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+            <h3><span>Why Choose </span><strong>Pinova Tech?</strong></h3>
+            <p>
+              Discover what sets Pinova Tech apart and why businesses trust us to drive their digital transformation.
+            </p>
+          </div>
+  
+          <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+  
+            <div class="faq-item faq-active">
+              <i class="faq-icon bi bi-star-fill"></i>
+              <h3>Exceptional Expertise and Innovation</h3>
+              <div class="faq-content">
+                <p>Pinova Tech brings together skills of experienced professionals delivering cutting-edge innovation tailored to your business.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Why Choose item-->
+  
+            <div class="faq-item">
+              <i class="faq-icon bi bi-shield-lock-fill"></i>
+              <h3>Commitment to Security and Reliability</h3>
+              <div class="faq-content">
+                <p>With advanced security protocols and regular system checks, Pinova Tech ensures that your data remains secure, while providing reliable solutions you can count on.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Why Choose item-->
+  
+            <div class="faq-item">
+              <i class="faq-icon bi bi-gear-fill"></i>
+              <h3>Customized Solutions for Every Industry</h3>
+              <div class="faq-content">
+                <p>From healthcare to finance, Pinova Tech crafts personalized solutions that align with the unique needs of your industry, helping you achieve lasting results.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Why Choose item-->
+  
+            <div class="faq-item">
+              <i class="faq-icon bi bi-hand-thumbs-up-fill"></i>
+              <h3>Dedicated Support and Client Satisfaction</h3>
+              <div class="faq-content">
+                <p>Your satisfaction is our priority. Our team provides dedicated support and guidance at every step to ensure your goals are met efficiently and effectively.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Why Choose item-->
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-lg-5 order-1 order-lg-2">
+          <img src="{% static "img/chooose.webp" %}" class="img-fluid" alt="Why Choose Pinova Tech" data-aos="zoom-in" data-aos-delay="100">
+        </div>
+        
+      </div>
+  
+    </div>
+  
+  </section><!-- /Why Choose Pinova Tech Section -->
+  
+  
+            
+      <!-- FAQ Section for Pinova Tech -->
+  <section id="faq" class="faq section light-background">
+  
+    <div class="container-fluid">
+  
+      <div class="row gy-4">
+  
+        <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+  
+          <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+            <h3><span>Common Queries </span><strong>Explained</strong></h3>
+            <p>
+              We're here to answer your questions and provide the support you need. Explore the most frequently asked questions from our clients.
+            </p>
+          </div>
+  
+          <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+  
+            <div class="faq-item faq-active">
+              <i class="faq-icon bi bi-question-circle"></i>
+              <h3>What services does Pinova Tech offer?</h3>
+              <div class="faq-content">
+                <p>Pinova Tech offers a wide range of services including software development, web development, mobile app development, AI & Machine Learning and Graphics design to meet your business needs.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+  
+            <div class="faq-item">
+              <i class="faq-icon bi bi-question-circle"></i>
+              <h3>How does Pinova Tech ensure data security?</h3>
+              <div class="faq-content">
+                <p>We prioritize data security through advanced encryption, secure protocols, and regular security audits, ensuring the highest standards for your information protection.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+  
+            <div class="faq-item">
+              <i class="faq-icon bi bi-question-circle"></i>
+              <h3>Can Pinova Tech customize services for specific industries?</h3>
+              <div class="faq-content">
+                <p>Yes, we tailor our services to fit the unique requirements of each industry, ensuring that our solutions are effective and aligned with industry standards.</p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-lg-5 order-1 order-lg-2">
+          <img src="{% static "img/ask1.png" %}" class="img-fluid" alt="Pinova Tech FAQ" data-aos="zoom-in" data-aos-delay="100">
+        </div>
+        
+      </div>
+  
+    </div>
+  
+  </section><!-- /FAQ Section for Pinova Tech -->
+  {% endblock content %}
