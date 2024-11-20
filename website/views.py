@@ -33,7 +33,7 @@ def contact_data(request):
                     destination.write(chunk)
 
         # Prepare the email
-        subject = f"New Contact Submission from {name}"
+        subject = f"Pinova Contact from {name}"
         message = f"Name: {name}\nEmail: {email}\n\nDescription:\n{description}"
         email_message = EmailMessage(
             subject=subject,
