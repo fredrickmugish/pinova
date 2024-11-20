@@ -72,14 +72,17 @@
                         <input type="file" name="requirements_doc" id="requirements-doc" class="form-control">
                     </div>
         
-                    <div id="response-message"></div>
-        
-                    <div class="col-md-12 text-center">
-                        <div class="loading" style="display: none;">Loading...</div>
-
-                        <button type="submit" style="background: linear-gradient(45deg, #09414d, #56b4d3)">Send Message</button>
-                    </div>
-        
+                    <div class="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; text-align: center;">
+                      <div style="color: white; font-size: 24px; margin-top: 20%; font-weight: bold;">
+                          Submitting your message...
+                      </div>
+                  </div>
+                  <div id="response-message"></div>
+                  
+                  <div class="col-md-12 text-center">
+                      <button id="submit-btn" type="submit" class="btn btn-primary" style="background: linear-gradient(45deg, #09414d, #56b4d3);">Send Message</button>
+                  </div>
+                  
                 </div>
             </form>
         </div>
@@ -89,86 +92,76 @@
       </div>
     </section>
     <br>
+
+
+
     <script>
-      $(document).ready(function() {
-          $('#contact-form').submit(function(e) {
-              e.preventDefault();  // Prevent the form from reloading the page
-      
-              // Get the form data
-              var formData = new FormData(this);  
-              var $submitBtn = $('#submit-btn');
-      
-              // Show the loading message only if it's not already submitted
-              if ($('.sent-message').is(':hidden')) {
-                  $('.loading').show();  // Show loading spinner
-                  $('.sent-message').hide();  // Hide sent message initially
-              }
-      
-              // Disable the submit button to prevent multiple submissions
-              $submitBtn.prop('disabled', true);
-      
-              $.ajax({
-                  url: "{% url 'contact_data' %}",  // URL where the form data will be sent
-                  type: 'POST',
-                  data: formData,
-                  processData: false,  // Do not process the data
-                  contentType: false,  // Do not set content type
-                  success: function(response) {
-                      // Hide loading message after the response
-                      $('.loading').hide();
-      
-                      // Enable the submit button after submission
-                      $submitBtn.prop('disabled', false);
-      
-                      // Clear the response message area
-                      $('#response-message').empty();
-      
-                      // Check if the response status is 'success' and display the success message
-                      if (response.status === 'success') {
-                          // Show success message
-                          $('.sent-message').show();
-      
-                          // Optionally reset the form after success
-                          $('#contact-form')[0].reset();
-      
-                          // Display success message in the response div
-                          $('#response-message').html(`
-                              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                  ${response.message}
-                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                              </div>
-                          `);
-                      } else {
-                          // Handle error scenario
-                          $('#response-message').html(`
-                              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                  ${response.message}
-                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                              </div>
-                          `);
-                      }
-                  },
-                  error: function(xhr, status, error) {
-                      // Hide loading message after the error
-                      $('.loading').hide();
-      
-                      // Enable the submit button again in case of an error
-                      $submitBtn.prop('disabled', false);
-      
-                      // If an error occurs in the AJAX call, handle it here
-                      var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to send the message. Please try again.';
-      
-                      // Display the error message
-                      $('#response-message').html(`
-                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                              ${errorMessage}
-                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                      `);
-                  }
-              });
-          });
-      });
+      $(document).ready(function () {
+        $('#contact-form').submit(function (e) {
+            e.preventDefault(); // Prevent default form submission
+    
+            var formData = new FormData(this);
+            var $submitBtn = $('#submit-btn');
+            var $overlay = $('.overlay');
+    
+            // Show overlay and change button state
+            $overlay.show();
+            $submitBtn.text('Submitting...').prop('disabled', true);
+    
+            $.ajax({
+                url: "{% url 'contact_data' %}",
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                success: function (response) {
+                    $overlay.hide();
+                    $submitBtn.text('Send Message').prop('disabled', false);
+    
+                    $('#response-message').empty();
+    
+                    if (response.status === 'success') {
+                        $('#contact-form')[0].reset();
+                        $('#response-message').html(`
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                ${response.message}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        `);
+                    } else {
+                        $('#response-message').html(`
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                ${response.message}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        `);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $overlay.hide();
+                    $submitBtn.text('Send Message').prop('disabled', false);
+    
+                    var errorMessage = xhr.responseJSON
+                        ? xhr.responseJSON.message
+                        : 'Failed to send the message. Please try again.';
+                    $('#response-message').html(`
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            ${errorMessage}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    `);
+                },
+                complete: function () {
+                    $overlay.hide();
+                    $submitBtn.text('Send Message').prop('disabled', false);
+                }
+            });
+        });
+    });
+    
     </script>
     
     
