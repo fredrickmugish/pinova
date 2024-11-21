@@ -41,7 +41,8 @@
           <p>
             At Pinova Tech, we are committed to crafting cutting-edge solutions that empower businesses and individuals to achieve their goals through technology.
           </p>
-          <a id="scrollButton" class="btn btn-lg" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; border: none;">Our Core Strengths <i class="bi bi-arrow-right"></i></a>
+          
+          <a id="scrollButton" class="btn btn-lg" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; border: none;">Our Core Strengths <i id="arrowIcon" class="bi bi-arrow-right"></i></a>
           
         </div>
   
@@ -398,10 +399,28 @@
 
 
   <script>
-    document.getElementById('scrollButton').addEventListener('click', function () {
-      // Check if the device width is small (e.g., 768px or less)
+    function updateArrowIcon() {
+      const arrowIcon = document.getElementById('arrowIcon');
       if (window.innerWidth <= 768) {
-        // Scroll down slightly (adjust the value as needed)
+        // Change the arrow icon to point downward on small devices
+        arrowIcon.classList.remove('bi-arrow-right');
+        arrowIcon.classList.add('bi-arrow-down');
+      } else {
+        // Reset the arrow icon to point right on larger devices
+        arrowIcon.classList.remove('bi-arrow-down');
+        arrowIcon.classList.add('bi-arrow-right');
+      }
+    }
+  
+    // Update arrow icon on page load
+    updateArrowIcon();
+  
+    // Update arrow icon on window resize
+    window.addEventListener('resize', updateArrowIcon);
+  
+    // Scroll behavior
+    document.getElementById('scrollButton').addEventListener('click', function () {
+      if (window.innerWidth <= 768) {
         window.scrollBy({ top: 250, left: 0, behavior: 'smooth' });
       }
     });
