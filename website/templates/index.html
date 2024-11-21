@@ -41,7 +41,13 @@
           <p>
             At Pinova Tech, we are committed to crafting cutting-edge solutions that empower businesses and individuals to achieve their goals through technology.
           </p>
-         
+          <div class="text-lg-start text-center">
+            <a id="scrollButton" class="btn btn-lg" 
+               style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; border: none; cursor: pointer;">
+              Our Core Strengths <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+          
         </div>
   
         <!-- Icon Boxes -->
@@ -55,6 +61,16 @@
         </div>
       </div>
   
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon-box shadow p-4 text-center rounded">
+          <i class="bi bi-gear fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
+          <h3 class="h5">Custom Development</h3>
+          <p>We develop custom solutions that align with your unique requirements and objectives.</p>
+        </div>
+      </div>
+  
+
+
       <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="icon-box shadow p-4 text-center rounded">
           <i class="bi bi-shield-check fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
@@ -64,14 +80,7 @@
       </div>
       
   
-      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="icon-box shadow p-4 text-center rounded">
-          <i class="bi bi-gear fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
-          <h3 class="h5">Custom Development</h3>
-          <p>We develop custom solutions that align with your unique requirements and objectives.</p>
-        </div>
-      </div>
-  
+      
       <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
         <div class="icon-box shadow p-4 text-center rounded">
           <i class="bi bi-graph-up-arrow fs-3 mb-3" style="background: linear-gradient(45deg, #09414d, #56b4d3); color: white; padding: 10px; border-radius: 50%;"></i>
@@ -391,4 +400,15 @@
     </div>
   
   </section><!-- /FAQ Section for Pinova Tech -->
+
+
+  <script>
+    document.getElementById('scrollButton').addEventListener('click', function () {
+      // Check if the device width is small (e.g., 768px or less)
+      if (window.innerWidth <= 768) {
+        // Scroll down slightly (adjust the value as needed)
+        window.scrollBy({ top: 250, left: 0, behavior: 'smooth' });
+      }
+    });
+  </script>
   {% endblock content %}
